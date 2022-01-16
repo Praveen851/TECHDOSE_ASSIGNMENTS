@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-import javax.crypto.CipherSpi;
-import javax.swing.text.StyledEditorKit.BoldAction;
 class Graph{
   ArrayList<ArrayList<Integer>> graph;
   int V;
@@ -34,7 +31,7 @@ class Graph{
   }
   void DFS(int start){
       boolean visited[] = new boolean[V];
-      System.out.println("DFS Traversal of an array");
+      System.out.println("DFS Traversal");
       dfsUtil(start, visited);
   }
 }
