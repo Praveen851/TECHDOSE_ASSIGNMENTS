@@ -34,7 +34,7 @@ class Graph{
   }
   void DFS(int start){
       boolean visited[] = new boolean[V];
-      System.out.println("DFS Traversak of an array");
+      System.out.println("DFS Traversal of an array");
       dfsUtil(start, visited);
   }
 }
