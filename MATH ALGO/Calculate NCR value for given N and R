@@ -1,0 +1,27 @@
+import java.util.*;
+public class Hello {
+    public static long gcd(long a,long b){
+      if(a==0)return b;
+      return gcd(b%a,a);
+    }
+    public static long ncr(int n,int r){
+      long p=1,k=1;
+      if(r!=0){
+        while (r>0){
+          p*=n;
+          k*=r;
+          long gcdVal=gcd(p,k);
+          p/=gcdVal;
+          k/=gcdVal;
+          n--;
+          r--;
+        } 
+      }
+      return p/k;
+    }
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      int n=scanner.nextInt(),r=scanner.nextInt();
+      System.out.print(ncr(n,r));
+    }
+}
