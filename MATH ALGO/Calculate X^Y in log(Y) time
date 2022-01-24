@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Hello {
+    public static long binExpo(int base,int power){
+      long res=1;
+      while(power>0){
+        if(power%2==1){
+          res*=base;
+        }
+        base=base*base;
+        power=power/2;
+      }
+      return res;
+    }
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      int base=scanner.nextInt(),power=scanner.nextInt();
+      System.out.print(binExpo(base,power));
+      
+    }
+}
