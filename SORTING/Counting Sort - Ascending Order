@@ -1,0 +1,20 @@
+import java.util.*;
+public class HelloWorld {
+    public static void main(String[] args) {
+      Integer[] nums = {41,3,234,164,52,43,742,4325,64,247,347,13};
+      int len = nums.length;
+      int range = Collections.max(Arrays.asList(nums))+1;
+      int[] process = new int[range];
+      for(int index = 0; index < len; index++){
+        process[nums[index]]++;
+      }
+      for(int index = 1; index < range; index++){
+        process[index] += process[index - 1];
+      }
+      int[] result = new int[len];
+      for(int index = len - 1; index >= 0; index--){
+        result[--process[nums[index]]] = nums[index];
+      }
+      for(int n : result)System.out.print(n+" ");
+    }
+}
