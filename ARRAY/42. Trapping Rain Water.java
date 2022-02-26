@@ -27,3 +27,32 @@ class Solution {
 }
 
 //O(1)
+class Solution {
+    public int trap(int[] height) {
+        int len = height.length;
+        if(height.length < 3)return 0;
+        int maxL = height[0], maxR = height[len - 1];
+        int left = 1, right = len-2, water = 0;
+        while(left <= right){
+            if(maxL < maxR){
+                if(height[left] >= maxL){
+                    maxL = height[left];
+                }
+                else{
+                    water += maxL - height[left];
+                }
+                left++;
+            }
+            else{
+                if(height[right] >= maxR){
+                    maxR = height[right];
+                }
+                else{
+                    water += maxR - height[right];
+                }
+                right--;
+            }
+        }
+        return water;
+    }
+}
